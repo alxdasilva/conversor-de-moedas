@@ -27,5 +27,4 @@ angular.module("converter", [])
 			$scope.selectedCurrency = $scope.selectedCurrency2;
 			$scope.selectedCurrency2 = model1;
 		};
-
 	}]);
