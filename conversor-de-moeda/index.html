@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="converter">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Conversor de Moeda</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+	<!-- Scripts-->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="app.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+
+<body class="container" ng-controller="ConverterCtrl as ctrl">
+	<form name="form" ng-submit="result()">
+		<div class="jumbotron">
+			*
+			<input type="text" required ng-model="number"> *From:
+			<select name="repeatSelect" id="repeatSelect" ng-model="selectedCurrency" required="empty">
+				<option ng-repeat="(key,value) in currency.rates" value="{{key}}" >{{key}}</option>
+			</select>
+			<span ng-click="flipModel()" class="glyphicon glyphicon-resize-horizontal"></span>
+			*To:
+			<select name="repeatSelect" id="repeatSelect" ng-model="selectedCurrency2" required="empty">
+				<option ng-repeat="(key,value) in currency.rates" value="{{key}}" >{{key}}</option>
+			</select>
+			<button class="btn btn-primary" type="submit" ng-disabled="!selectedCurrency || !selectedCurrency2 || !number">Exchange</button>
+	</form>
+	<p ng-show="currency2">Result: {{currency2 | currency}} </p>
+
+	</div>
+</body>
+
+</html>

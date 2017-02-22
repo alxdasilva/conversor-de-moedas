@@ -1,0 +1,23 @@
+{
+  "name": "conversor-de-moeda",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Alex da Silva"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alxdasilva/conversor-de-moeda",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
