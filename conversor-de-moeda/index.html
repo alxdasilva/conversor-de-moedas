@@ -14,21 +14,21 @@
 </head>
 
 <body class="container" ng-controller="ConverterCtrl as ctrl">
-	<form name="form" ng-submit="result()">
+	<form name="form" ng-submit="ctrl.result()">
 		<div class="jumbotron">
 			*
-			<input type="text" required ng-model="number"> *From:
-			<select name="repeatSelect" id="repeatSelect" ng-model="selectedCurrency" required="empty">
-				<option ng-repeat="(key,value) in currency.rates" value="{{key}}" >{{key}}</option>
+			<input type="text" required ng-model="ctrl.number"> *From:
+			<select name="repeatSelect" id="repeatSelect" ng-model="ctrl.selectedCurrency" required="empty">
+				<option ng-repeat="(key,value) in ctrl.currency.rates" value="{{key}}" >{{key}}</option>
 			</select>
-			<span ng-click="flipModel()" class="glyphicon glyphicon-resize-horizontal"></span>
+			<span ng-click="ctrl.flipModel()" class="glyphicon glyphicon-resize-horizontal"></span>
 			*To:
-			<select name="repeatSelect" id="repeatSelect" ng-model="selectedCurrency2" required="empty">
-				<option ng-repeat="(key,value) in currency.rates" value="{{key}}" >{{key}}</option>
+			<select name="repeatSelect" id="repeatSelect" ng-model="ctrl.selectedCurrency2" required="empty">
+				<option ng-repeat="(key,value) in ctrl.currency.rates" value="{{key}}" >{{key}}</option>
 			</select>
-			<button class="btn btn-primary" type="submit" ng-disabled="!selectedCurrency || !selectedCurrency2 || !number">Exchange</button>
+			<button class="btn btn-primary" type="submit" ng-disabled="!ctrl.selectedCurrency || !ctrl.selectedCurrency2 || !ctrl.number">Exchange</button>
 	</form>
-	<p ng-show="currency2">Result: {{currency2 | currency}} </p>
+	<p ng-show="ctrl.currency2">Result: {{ctrl.currency2 | currency}} </p>
 
 	</div>
 </body>
